@@ -1,0 +1,7 @@
+/* LOCAL PREVIEW ONLY: the main site's webfonts send no CORS header, so localhost can't load them. */
+@font-face{font-family:"Font Awesome 6 Free";font-weight:900;font-display:block;src:url(fa-solid-900.woff2) format("woff2")}
+@font-face{font-family:"Font Awesome 6 Free";font-weight:400;font-display:block;src:url(fa-regular-400.woff2) format("woff2")}
+@font-face{font-family:"Font Awesome 6 Brands";font-weight:400;font-display:block;src:url(fa-brands-400.woff2) format("woff2")}
+@font-face{font-family:"Font Awesome 5 Free";font-weight:900;font-display:block;src:url(fa-solid-900.woff2) format("woff2")}
+@font-face{font-family:"Font Awesome 5 Free";font-weight:400;font-display:block;src:url(fa-regular-400.woff2) format("woff2")}
+@font-face{font-family:"Font Awesome 5 Brands";font-weight:400;font-display:block;src:url(fa-brands-400.woff2) format("woff2")}

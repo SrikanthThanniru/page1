@@ -1,0 +1,7 @@
+RewriteEngine On
+
+# Proposed final URL: /projects/sparkle-haven-villa-east-hyderabad
+RewriteRule ^projects/sparkle-haven-villa-east-hyderabad/?$ sparkle-haven-villa-east-hyderabad.php [L,QSA]
+
+# Block direct browsing of the includes folder
+RewriteRule ^includes/ - [F,L]
