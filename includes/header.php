@@ -26,7 +26,7 @@ $m = MAIN_SITE_URL;
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&family=Poppins:wght@200;300;400;500;600&display=swap">
-    <?php if (in_array($_SERVER['SERVER_NAME'] ?? '', ['localhost', '127.0.0.1'], true)): ?><link rel="stylesheet" href="/assets/dev/fa-local.css"><?php endif; ?>
+    <link rel="stylesheet" href="<?= SH_ASSETS ?>dev/fa-local.css">
     <!-- Page styles -->
     <link rel="stylesheet" href="<?= SH_ASSETS ?>css/sparkle-haven.css?v=4">
 </head>
