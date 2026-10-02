@@ -24,13 +24,24 @@ function e($v)
  * neutral placeholder block so the layout is identical before/after the artwork is supplied.
  * Drop files named <key>.jpg|.jpeg|.webp|.png into that folder and they are picked up automatically.
  */
-function sh_img($key, $alt, $class = '', $eager = false)
+function sh_img($key, $alt, $class = '', $eager = false, $sizes = '100vw')
 {
     $dir = __DIR__ . '/../assets/img/sparkle-haven/';
+    $base = SH_ASSETS . 'img/sparkle-haven/';
     foreach (['webp', 'jpg', 'jpeg', 'png'] as $ext) {
         if (is_file($dir . $key . '.' . $ext)) {
-            return '<img src="' . e(SH_ASSETS . 'img/sparkle-haven/' . $key . '.' . $ext) . '" alt="' . e($alt)
-                . '" class="' . e($class) . '" loading="' . ($eager ? 'eager' : 'lazy') . '" decoding="async">';
+            $dim = @getimagesize($dir . $key . '.' . $ext);
+            // resized copies (<key>-640.webp etc.) feed srcset so phones don't download the 2000px original
+            $set = [];
+            foreach ([640, 1024, 1440] as $w) {
+                if (is_file($dir . $key . '-' . $w . '.' . $ext)) $set[] = e($base . $key . '-' . $w . '.' . $ext) . ' ' . $w . 'w';
+            }
+            if ($set && $dim) $set[] = e($base . $key . '.' . $ext) . ' ' . $dim[0] . 'w';
+            return '<img src="' . e($base . $key . '.' . $ext) . '"'
+                . ($set ? ' srcset="' . implode(', ', $set) . '" sizes="' . e($sizes) . '"' : '')
+                . ($dim ? ' width="' . $dim[0] . '" height="' . $dim[1] . '"' : '')
+                . ' alt="' . e($alt) . '" class="' . e($class) . '" loading="' . ($eager ? 'eager' : 'lazy')
+                . '" decoding="async"' . ($eager ? ' fetchpriority="high"' : '') . '>';
         }
     }
     return '<div class="sh-ph ' . e($class) . '" role="img" aria-label="' . e($alt) . '"><span>' . e($key) . '</span></div>';

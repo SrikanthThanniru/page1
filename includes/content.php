@@ -6,7 +6,7 @@
 return [
     'meta' => [
         'title' => 'Sparkle Haven | Premium 4 BHK Triplex Villas in East Hyderabad',
-        'description' => "Explore Sparkle Haven's Luxurious 4 BHK triplex villas in Aushapur, Bibinagar, East Hyderabad. Enquire now.",
+        'description' => "Explore Sparkle Haven's Luxurious 4 BHK triplex villas in Aushapur, Ghatkesar, East Hyderabad. Enquire now.",
     ],
 
     'hero' => [
@@ -16,8 +16,8 @@ return [
 
     'intro' => [
         'title' => 'Introducing Sparkle Haven',
-        'text' => 'Set in Aushapur, Bibinagar, Sparkle Haven brings together 76 4-BHK triplex villas for families who want space to make their own. There is room to come together and room to unwind, from evenings in the home theatre to time spent outdoors among landscaped avenues. The community includes east- and west-facing villas, five planned outdoor spaces, and a clubhouse with a swimming pool, gym, banquet hall, and play area. Sparkle Haven brings the privacy of an independent villa into a community where life extends beyond your front door.',
-        'meta' => ['76 Villas', 'Aushapur, Bibinagar', '4 BHK Triplex Villas'],
+        'text' => 'Set in Aushapur, Ghatkesar, Sparkle Haven brings together 76 4-BHK triplex villas for families who want space to make their own. There is room to come together and room to unwind, from evenings in the home theatre to time spent outdoors among landscaped avenues. The community includes east- and west-facing villas, five planned outdoor spaces, and a clubhouse with a swimming pool, gym, banquet hall, and play area. Sparkle Haven brings the privacy of an independent villa into a community where life extends beyond your front door.',
+        'meta' => ['76 Villas', 'Aushapur, Ghatkesar', '4 BHK Triplex Villas'],
         'cta' => 'Book a Site Visit',
     ],
 
@@ -26,7 +26,7 @@ return [
         // Same ten facts as the source document, arranged into three cards for the tabbed panel.
         'groups' => [
             ['fa-map-marker-alt', 'Location & Community', [
-                ['fa-map-marker-alt', 'Location', 'Aushapur, Bibinagar; facing Warangal Highway 163'],
+                ['fa-map-marker-alt', 'Location', 'Aushapur, Ghatkesar; facing Warangal Highway 163'],
                 ['fa-shield-alt', 'Community', 'Gated layout described as an HMDA gated community'],
                 ['fa-road', 'Internal roads', '30 ft. and 40 ft.'],
             ]],
@@ -181,7 +181,7 @@ return [
 
     'location' => [
         'title' => 'Location and Connectivity',
-        'text' => "Sparkle Haven is in Aushapur, Bibinagar, facing Warangal Highway 163. The location provides a link towards Ghatkesar and ORR Exit 9, with schools, healthcare, employment areas and shopping destinations in the wider region.",
+        'text' => "Sparkle Haven is in Aushapur, Ghatkesar, facing Warangal Highway 163. The location provides a link towards ORR Exit 9, with schools, healthcare, employment areas and shopping destinations in the wider region.",
         'sidebar_title' => 'Indicative Drive Times',
         'times' => [
             ['1 minute', 'Aurora College; Anurag College of Engineering'],
@@ -194,7 +194,7 @@ return [
             ['45 minutes', 'Rajiv Gandhi International Airport, Shamshabad'],
         ],
         'note' => 'Travel times are indicative and vary with traffic, route and starting point. Check routes relevant to you when planning a visit.',
-        'map_query' => 'Aushapur, Bibinagar, Telangana',
+        'map_query' => 'Aushapur, Ghatkesar, Telangana',
         'cta_map' => 'View Location Map',
         'cta_visit' => 'Book a Site Visit',
     ],
@@ -213,7 +213,7 @@ return [
     'faqs' => [
         'title' => 'Frequently Asked Questions',
         'items' => [
-            ['Where is Sparkle Haven located?', "Sparkle Haven is in Aushapur, Bibinagar, facing Warangal Highway 163. ORR Exit 9 at Ghatkesar is among the area's road connections."],
+            ['Where is Sparkle Haven located?', "Sparkle Haven is in Aushapur, Ghatkesar, facing Warangal Highway 163. ORR Exit 9 at Ghatkesar is among the area's road connections."],
             ['What type of homes are available?', 'Sparkle Haven comprises east- and west-facing 4-BHK triplex villas with dedicated home theatre spaces. Ask the project team about the villas currently available in each facing option.'],
             ['What is the size range of the villas?', 'The stated plot-size range is 200–237 sq. yd., and the built-up area range is 2,760–4,261 sq. ft. Confirm the measurements for the villa you select.'],
             ['What is included in the clubhouse?', 'The planned clubhouse facilities include a swimming pool, banquet hall, gym and play area. Other illustrated spaces include a reception lounge, multipurpose hall, yoga and Zumba area, guest rooms, and indoor games.'],

@@ -23,6 +23,10 @@
                                     <div class="footer-address-info"><p style="color: white !important;"><a href="tel:<?= e(PHONE_TEL) ?>">+91 9885447747</a></p></div>
                                 </li>
                                 <li>
+                                    <div class="footer-address-icon"><i class="icon-call"></i></div>
+                                    <div class="footer-address-info"><p style="color: white !important;"><a href="tel:+918334833833">+91 8334833833</a></p></div>
+                                </li>
+                                <li>
                                     <div class="footer-address-icon"><i class="icon-mail"></i></div>
                                     <div class="footer-address-info"><p style="color: white !important;"><a href="mailto:info@jagathswapnahyd.com">info@jagathswapnahyd.com</a></p></div>
                                 </li>
@@ -83,7 +87,7 @@
 
 <script src="<?= $m ?>assets/js/plugins.js"></script>
 <script src="<?= $m ?>assets/js/main.js"></script>
-<script src="<?= SH_ASSETS ?>js/sparkle-haven.js?v=2"></script>
+<script src="<?= SH_ASSETS ?>js/sparkle-haven.js?v=3"></script>
 </body>
 
 </html>

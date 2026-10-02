@@ -4,8 +4,8 @@
  * Proposed URL: /projects/sparkle-haven-villa-east-hyderabad  (see .htaccess)
  *
  * Section flow and scroll behaviour follow the reference project page (Radhey Raaga):
- * hero video → intro split → pinned "curtain" details panel (Highlights / Specification tabs)
- * → pinned sideways amenities → floor plans → map with sidebar → FAQ.
+ * hero video → intro split → details panel (Highlights / Specification tabs)
+ * → amenities grid → floor plans → map with sidebar → FAQ. (No pinned scroll sections.)
  */
 require __DIR__ . '/includes/config.php';
 $c = require __DIR__ . '/includes/content.php';
@@ -40,11 +40,11 @@ require __DIR__ . '/includes/header.php';
 <section class="sh-hero" id="top">
     <div class="sh-hero__media">
         <?php if ($heroVideo): ?>
-            <video class="sh-hero__video" autoplay muted loop playsinline preload="auto" poster="<?= e(SH_ASSETS) ?>img/sparkle-haven/hero.webp" data-hero-video>
+            <video class="sh-hero__video" autoplay muted loop playsinline preload="metadata" poster="<?= e(SH_ASSETS) ?>img/sparkle-haven/hero.webp" data-hero-video>
                 <source src="<?= e($heroVideo) ?>" type="video/mp4">
             </video>
         <?php else: ?>
-            <?= sh_img('hero', 'Sparkle Haven villas', 'sh-hero__img', true) ?>
+            <?= sh_img('hero', 'Sparkle Haven villas', 'sh-hero__img', true, '100vw') ?>
         <?php endif; ?>
     </div>
     <div class="sh-hero__shade"></div>
@@ -82,12 +82,12 @@ require __DIR__ . '/includes/header.php';
                     </div>
                 </div>
             </div>
-            <div class="sh-story__media"><?= sh_img('introduction', 'Introducing Sparkle Haven', '', true) ?></div>
+            <div class="sh-story__media"><?= sh_img('introduction', 'Introducing Sparkle Haven', '', true, '(min-width: 992px) 50vw, 100vw') ?></div>
         </div>
 
         <!-- overlay: left image panel -->
         <div class="sh-story__left" data-left>
-            <?= sh_img('highlights', 'Sparkle Haven project highlights', '', true) ?>
+            <?= sh_img('highlights', 'Sparkle Haven project highlights', '', false, '(min-width: 992px) 50vw, 100vw') ?>
             <div class="sh-story__shade"></div>
             <div class="sh-story__caption">
                 <div data-caption="highlights" class="is-on">
@@ -176,9 +176,9 @@ require __DIR__ . '/includes/header.php';
                     <p class="sh-p" data-reveal><?= e($p) ?></p>
                 <?php endforeach; ?>
             </div>
-            <div class="sh-planning__media" data-badge="Entrance arch view"><?= sh_img('community-planning', 'Sparkle Haven community layout') ?></div>
+            <div class="sh-planning__media" data-badge="Entrance arch view"><?= sh_img('community-planning', 'Sparkle Haven community layout', '', false, '(min-width: 992px) 45vw, 100vw') ?></div>
         </div>
-        <h3 class="sh-chips__title" data-reveal>Infrastructure at a glance</h3>
+        <h3 class="sh-chips__title" data-reveal><span>Infrastructure at a glance</span></h3>
         <ul class="sh-chips">
             <?php foreach ($c['planning']['chips'] as [$icon, $label]): ?>
                 <li data-reveal><i class="fas <?= e($icon) ?>"></i><span><?= e($label) ?></span></li>
@@ -235,7 +235,7 @@ require __DIR__ . '/includes/header.php';
                 <div class="sh-plans__frame">
                     <?php foreach ($c['villas']['facings'] as $fk => $fl): foreach ($c['villas']['floors'] as $ok => $ol): ?>
                         <div class="sh-plan" data-plan="<?= e($fk . '-' . $ok) ?>" hidden>
-                            <?= sh_img('plan-' . $fk . '-' . $ok, $fl . ' – ' . $ol . ' (4 BHK)', '', true) ?>
+                            <?= sh_img('plan-' . $fk . '-' . $ok, $fl . ' – ' . $ol . ' (4 BHK)', '', false, '(min-width: 992px) 520px, 90vw') ?>
                         </div>
                     <?php endforeach; endforeach; ?>
                 </div>
@@ -249,32 +249,29 @@ require __DIR__ . '/includes/header.php';
 </section>
 
 <!-- ============ OUTDOOR SPACES (pinned sideways scroll) ============ -->
-<section class="sh-amen sh-wave" id="outdoor-spaces" data-hscroll>
-    <div class="sh-amen__pin">
-        <div class="sh-amen__title" data-amen-title>
-            <h2 class="sh-h2"><?= e($c['outdoor']['title']) ?></h2>
-            <p class="sh-p sh-p--sm"><?= e($c['outdoor']['intro']) ?></p>
-        </div>
-        <div class="sh-amen__stat" data-amen-stat>
-            <span class="sh-amen__num"><?= e($c['outdoor']['stat'][0]) ?></span>
-            <div class="sh-amen__line"></div>
-            <span class="sh-amen__cap"><?= e($c['outdoor']['stat'][1]) ?></span>
-        </div>
-        <div class="sh-amen__viewport">
-            <div class="sh-amen__track" data-track>
-                <?php foreach ($c['outdoor']['spaces'] as [$key, $name, $area]): ?>
-                    <figure class="sh-card" data-card>
-                        <div class="sh-card__img"><?= sh_img($key, $name, '', true) ?></div>
-                        <figcaption>
-                            <strong><?= e($name) ?></strong>
-                            <span>Approx. <?= e($area) ?></span>
-                        </figcaption>
-                    </figure>
-                <?php endforeach; ?>
+<section class="sh-section sh-amen sh-wave" id="outdoor-spaces">
+    <div class="sh-wrap sh-wrap--wide">
+        <div class="sh-amen__head">
+            <div class="sh-amen__title">
+                <h2 class="sh-h2" data-reveal><?= e($c['outdoor']['title']) ?></h2>
+                <p class="sh-p sh-p--sm" data-reveal><?= e($c['outdoor']['intro']) ?></p>
+            </div>
+            <div class="sh-amen__stat" data-reveal>
+                <span class="sh-amen__num"><?= e($c['outdoor']['stat'][0]) ?></span>
+                <div class="sh-amen__line"></div>
+                <span class="sh-amen__cap"><?= e($c['outdoor']['stat'][1]) ?></span>
             </div>
         </div>
-        <div class="sh-amen__progress" data-progress>
-            <?php foreach ($c['outdoor']['spaces'] as $_): ?><i></i><?php endforeach; ?>
+        <div class="sh-amen__grid">
+            <?php foreach ($c['outdoor']['spaces'] as $i => [$key, $name, $area]): ?>
+                <figure class="sh-card" data-reveal style="--d:<?= ($i % 3) * .08 ?>s">
+                    <div class="sh-card__img"><?= sh_img($key, $name, '', false, '(min-width: 992px) 33vw, (min-width: 576px) 50vw, 100vw') ?></div>
+                    <figcaption>
+                        <strong><?= e($name) ?></strong>
+                        <span>Approx. <?= e($area) ?></span>
+                    </figcaption>
+                </figure>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>
@@ -374,7 +371,7 @@ require __DIR__ . '/includes/header.php';
 
 <!-- ============ VISIT CTA ============ -->
 <section class="sh-visit" id="visit">
-    <div class="sh-visit__bg"><?= sh_img('visit', 'Visit Sparkle Haven') ?></div>
+    <div class="sh-visit__bg"><?= sh_img('visit', 'Visit Sparkle Haven', '', false, '100vw') ?></div>
     <div class="sh-visit__shade"></div>
     <div class="sh-visit__content">
         <h2 class="sh-h2 sh-h2--light" data-reveal><?= e($c['visit']['title']) ?></h2>
